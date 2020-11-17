@@ -1,19 +1,20 @@
 [![Hashitalks_AmericaLatina](./images/Hashitalks_AmericaLatina.png)](https://events.hashicorp.com/hashitalkslatinamerica)
 
-#Dynamic ProxySQL configuration with Consul
+
+# Dynamic ProxySQL configuration with Consul
 
 This demo showcases how to implement a dynamic configuration using Consul. This demo creates a couple of containers:
 
 - Consul
 - Proxysql
 
-##Prerequisites:
+## Prerequisites:
 
 1. Linux distribution to run the demo
 2. Docker & docker-compose
 3. Terraform
 
-##Initialize Demo:
+## Initialize Demo:
 
 ```
 % start_environment.sh
@@ -77,7 +78,7 @@ You can also scale up the number of ProxySQL nodes and see that all have the sam
 docker-compose up --scale proxysql=5 -d
 ```
 
-##Stop Demo:
+## Stop Demo:
 ```
 % stop_environment.sh
 ```

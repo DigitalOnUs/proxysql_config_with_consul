@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  consul:
+    image: bitnami/consul:latest
+    networks:
+      - consul-network
+    ports:
+      - '8300:8300'
+      - '8301:8301'
+      - '8301:8301/udp'
+      - '8500:8500'
+      - '8600:8600'
+      - '8600:8600/udp'
+
+  proxysql:
+    image: xfrarod/proxysql
+    networks:
+        - consul-network
+    ports:
+      - "6032"
+      - "6033"
+      - "6080"
+      - "8300"
+      - "8301"
+      - "8302"
+      - "8500"
+      - "8501"
+      - "8502"
+      - "8600"
+    mem_limit: 2048m
+    environment:
+      - MONITOR_CONFIG_CHANGE=true
+      - CONSUL_DATACENTER=${datacenter:-dc1}
+
+networks:
+  consul-network:
+    driver: bridge

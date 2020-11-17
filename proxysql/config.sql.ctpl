@@ -1,0 +1,1 @@
+{{ key "proxysql/config/config.sql" }}

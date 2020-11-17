@@ -1,0 +1,10 @@
+{
+  "check": {
+    "id": "proxysql-pid",
+    "name": "ProxySql PID Status",
+    "args": ["pidof", "proxysql"],
+    "interval": "10s",
+    "timeout": "1s"
+  }
+}
+
